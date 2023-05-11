@@ -1,0 +1,55 @@
+#nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+}
+
+.main-body {
+  background-color: #f5f6f8;
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+}
+
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+#left-column {
+  background-color: #fff;
+  height: 500px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#country-name {
+  background-color: #fff;
+  height: 150px;
+}
+
+#left-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background-color: #fff;
+  height: 200px;
+}
+
+#right-info {
+  background-color: #fff;
+  height: 200px;
+}
+
+#border-countries {
+  background-color: #fff;
+  height: 150px;
+}
