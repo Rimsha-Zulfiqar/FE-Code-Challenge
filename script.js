@@ -1,11 +1,11 @@
 
 
+
 let countriesData = [];
 async function fetchCountriesData() {
   try {
     const response = await fetch('https://restcountries.com/v3.1/all');
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -13,47 +13,31 @@ async function fetchCountriesData() {
 }
 
 
-let clickedDivValue;
-
-
-async function renderCountriesData(){
+async function renderCountriesData() {
   countriesData = await fetchCountriesData();
-  let html = '';
-  let container = document.getElementById("flag-container");
-
-
-  for(country in countriesData){
-    let countryDiv = document.createElement('div');
+  const container = document.getElementById("flag-container");
+  countriesData.map((country) => {
+    const countryDiv = document.createElement('div');
     countryDiv.classList.add('flag-card');
-
     countryDiv.addEventListener('click', function(event) {
-      const value = event.target.textContent;
-      clickedDivValue = value;
-      localStorage.setItem('countryData', JSON.stringify(countriesData[country]));
-      window.location.href = 'detail-view.html';
-
-    });     
-
-    countryDiv.insertAdjacentHTML('afterbegin',
-        `<div class="flag-image">
-            <img src="${countriesData[country].flags.png}" width="270" height="200"></img>
-        </div>
-        <div class="flag-info">
-            <h2><b>${countriesData[country].name.common}</b></h2>
-            <p><b>Population:</b> ${countriesData[country].population}</p>
-            <p><b>Capital: </b>${countriesData[country].capital}</p>
-        </div>
-        `
-    )
+      navigateCountry(country.name.common);
+    });
+    countryDiv.innerHTML = `
+      <div class="flag-image">
+        <img src="${country.flags.png}" width="270" height="200"></img>
+      </div>
+      <div class="flag-info">
+        <h2><b>${country.name.common}</b></h2>
+        <p><b>Population:</b> ${country.population}</p>
+        <p><b>Capital: </b>${country.capital}</p>
+      </div>
+    `;
     container.appendChild(countryDiv);
-   
-  }
- 
+  });
 }
 renderCountriesData();
 
 
-console.log(clickedDivValue);
 
 
 let searchBar = document.getElementById('search-bar');
@@ -63,24 +47,21 @@ searchBar.addEventListener('input', filterCountries);
 filterFeature.addEventListener('change', filterCountries);
 
 function filterCountries() {
-  let filter = filterFeature.value;
-  let search = searchBar.value.toLowerCase();
-  let filteredCountries = countriesData.filter((country) => {
-    if (filter === 'filter by region' || filter === '') {
-      return country.name.common.toLowerCase().includes(search);
-    } else {
-      return (
-        country.region.toLowerCase() === filter &&
-        country.name.common.toLowerCase().includes(search)
-      );
-    }
+  const filter = filterFeature.value.toLowerCase();
+  const search = searchBar.value.toLowerCase();
+  
+  const filteredCountries = countriesData.filter(country => {
+    const nameMatches = country.name.common.toLowerCase().includes(search);
+    const regionMatches = filter === 'filter by region' || country.region.toLowerCase().includes(filter);
+    
+    return nameMatches && regionMatches;
   });
+  
   renderFilteredCountries(filteredCountries);
 }
 
 
 function renderFilteredCountries(filteredCountries) {
-  let html = '';
   let container = document.getElementById('flag-container');
   container.innerHTML = '';
 
@@ -111,30 +92,63 @@ function renderFilteredCountries(filteredCountries) {
 
 
 
+function goBack() {
+  window.history.back();
+}
 
 
 
 
 
-function renderCountries(countries) {
-  const container = document.getElementById("detail-container");
-  let html = "";
-    html += `
-    <div class="box left-column"><img src="${country.flag}" alt="${country.name} flag" /></div>
-        <div class="right-column">
-          <div class="box country-name">${country.name}</div>
-          <div>
-            <div class="box left-info">${country.population.toLocaleString()}</div>
-            <div class="box right-info">${country.region}</div>
-          </div>
-          <div class="box border-countries">${country.capital}</div>
-        </div>
-      </div>
-      <div id="flag-container"></div>
-      <div id="fixed-flag-container"></div>
-    `;
-    container.innerHTML = html;
-  };
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function navigateCountry(countryName) {
+  const url = `detail-view.html?country=${countryName}`;
+  window.location.href = url;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
