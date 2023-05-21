@@ -1,0 +1,133 @@
+:root {
+  --bgColor :  hsl(207, 26%, 17%);
+  --headerColor: hsl(209, 23%, 22%);
+  --textColor: hsl(0, 0%, 100%);
+  --shadowColor: rgba(0, 0, 0, 0.2);
+  font-family: 'Nunito Sans', sans-serif;
+}
+html[data-theme='light']{
+  --bgColor : hsl(0, 0%, 98%);
+  --headerColor: white;
+  --textColor: black;
+  --shadowColor: #DFDEDE;
+}
+html[data-theme='dark']{
+  --bgColor :  hsl(207, 26%, 17%);
+  --headerColor: hsl(209, 23%, 22%);
+  --textColor: white;
+  --shadowColor: #1A1818;
+}
+#nav-bar {
+  color: var(--textColor);
+  font-family: 'Nunito Sans';
+  font-weight: 300;
+  width: 100%;
+  padding-top: 0.75%;
+  padding-bottom: 0.75%;
+  padding-left: 5.5%;
+  padding-right: 5.5%;
+  margin: 0%;
+  box-shadow: 3px 5px 6px var(--shadowColor);
+  box-sizing: border-box;
+  justify-content: space-between;
+  display: flex;
+  background-color: var(--headerColor);
+}
+body {
+  overflow-x: hidden;
+  background-color: var(--bgColor);
+}
+.main-body {
+  margin: 0px;
+}
+#homepage-body {
+  width: 100%;
+  min-height: 100%;
+}
+#search-filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+  border: none;
+  font-size: 17px;
+}
+#search-bar {
+  border-color: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  padding-left: 4%;
+  padding-right: 8%;
+}
+#filter-feature {
+  border-color: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  padding-left: 2%;
+  padding-right: 7%;
+}
+#flag-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem 4rem;
+  margin: 0px 50px 0px 50px;
+}
+.flag-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.flag-image {
+  flex: 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+}
+.flag-image img {
+  width: 100%;
+  height: 100%;
+  object-position: top;
+}
+.flag-info {
+  padding: 10px;
+  background-color: var(--bgColor);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: var(--textColor);
+}
+.theme-box {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--textColor);
+}
+#theme-text {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#search-bar, #filter-feature {
+  background-color: var(--bgColor);
+  color: var(--textColor);
+}
+
+
+
+@media screen and (min-width: 1440px){
+   #flag-container{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+}
+
+
+
+
+
