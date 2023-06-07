@@ -56,7 +56,7 @@ The following technologies and frameworks were utilized to complete the project:
 # How to Run?
 To run this project locally, follow these steps:
 
-* Clone the repository: git clone https://github.com/username/repository.git
+* Clone the repository: git clone [https://github.com/username/repository.git](https://github.com/Rimsha-Zulfiqar/FE-Code-Challenge.git)
 * Navigate to the project directory: cd rest-countries-explorer
 * Open the index.html file in a web browser.
 
