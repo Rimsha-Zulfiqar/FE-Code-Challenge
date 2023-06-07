@@ -56,17 +56,13 @@ The following technologies and frameworks were utilized to complete the project:
 # How to Run?
 To run this project locally, follow these steps:
 
-* Clone the repository: git clone [https://github.com/username/repository.git](https://github.com/Rimsha-Zulfiqar/FE-Code-Challenge.git)
+* Clone the repository: git clone [https://github.com/Rimsha-Zulfiqar/FE-Code-Challenge.git](https://github.com/Rimsha-Zulfiqar/FE-Code-Challenge.git)
 * Navigate to the project directory: cd rest-countries-explorer
-* Open the index.html file in a web browser.
+* Open the homepage.html file in a web browser.
 
 
 # API References
 The REST Countries API documentation can be found at: [REST Countries API Docs](https://restcountries.com/)
-
-
-# Tests
-
 
 
 # Build Status / Errors
@@ -80,7 +76,7 @@ To use this project, follow these steps:
 * On the homepage, you will see a list of countries.
 * Use the search input field to search for a specific country by name.
 * Use the region filter to narrow down the displayed countries by region.
-* Click on a country card to view detailed information about that country on a separate page.
+* Click on a country card to view detailed information about that country.
 * On the country detail page, click on the border countries to navigate to their respective detail pages.
 * Optionally, use the toggle button to switch between light and dark mode color schemes.
 
@@ -98,11 +94,9 @@ Contributions to this project are highly welcome. To contribute, please follow t
 # Credits
 The following resources and links were used to construct this project:
 
-* REST Countries API: The RESTful API used to fetch country data.
-* HTML: The markup language for building web pages.
-* CSS: The styling language for enhancing the visual appearance of web pages.
-* JavaScript: The programming language for adding interactivity and functionality to web pages.
-
-
-# License
+* [REST Countries API](https://restcountries.com/)
+* [Responsive Design Basics](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+* [Media Queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries)
+* [Learn Responsive Web Design](https://www.freecodecamp.org/news/learn-responsive-web-design-in-5-minutes/)
+* [Cascade, Specificity, and Inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
 
