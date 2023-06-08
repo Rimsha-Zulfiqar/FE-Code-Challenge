@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="detail-page.css" />
+  </head>
+  <body>
+    <div id="nav-bar">
+      <div class="logo-container">
+        <span class="heading" id="where-in-world">Where in the world?</span>
+      </div>
+      <div class="theme-box" onclick="toggleTheme()">
+        <p class="theme-changer">
+          <i class="fa-regular fa-moon" id="theme-icon"></i>&nbsp;&nbsp;<span
+            id="theme-text"
+            >Dark Mode</span
+          >
+        </p>
+      </div>
+    </div>
+    <div id="button-div">
+      <button onclick="goBack()" id="back-button" class="back-btn-icon">
+        <i class="fas fa-arrow-left"></i>
+        Back
+      </button>
+    </div>
+
+    <div id="detail-container" class="country-detail"></div>
+
+    <script src="./detail-page.js"></script>
+    <script src="../toggletheme/toggletheme.js"></script>
+  </body>
+</html>
