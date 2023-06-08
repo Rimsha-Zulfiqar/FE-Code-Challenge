@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FE Code Challenge</title>
+    <meta name="description" content="A simple Flag project." />
+    <meta name="author" content="Rimsha Zulfiqar" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="homepage.css" />
+  </head>
+
+  <body class="main-body">
+    <div id="nav-bar">
+      <div class="logo-container">
+        <span class="heading" id="where-in-world">Where in the world?</span>
+      </div>
+      <div class="theme-box" onclick="toggleTheme()">
+        <p class="theme-changer">
+          <i class="fa-regular fa-moon" id="theme-icon"></i>&nbsp;&nbsp;<span
+            id="theme-text"
+            >Dark Mode</span
+          >
+        </p>
+      </div>
+    </div>
+    <div id="homepage-body">
+      <header>
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            name="search"
+            type="text"
+            placeholder="Search for a country..."
+          />
+        </div>
+        <div class="filter">
+          <button class="filter-button" onclick="toggleDropdown()">
+            <span id="filter-word">Filter by Region</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="filter-dropdown">
+            <ul class="dropdown-list">
+              <li id="all" onclick="selectFilter('All')">All</li>
+              <li id="africa" onclick="selectFilter('Africa')">Africa</li>
+              <li id="americas" onclick="selectFilter('Americas')">Americas</li>
+              <li id="asia" onclick="selectFilter('Asia')">Asia</li>
+              <li id="europe" onclick="selectFilter('Europe')">Europe</li>
+              <li id="oceania" onclick="selectFilter('Oceania')">Oceania</li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <div id="flag-container"></div>
+    </div>
+    <script src="./homepage.js"></script>
+    <script src="../toggletheme/toggletheme.js"></script>
+  </body>
+</html>
